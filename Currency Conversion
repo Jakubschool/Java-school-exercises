@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+class Main {
+  static double poundToDollar(float a) {
+    return 1.29*a;
+  }
+  static double poundToPln(float a) {
+    return 4.88*a;
+  }
+  static double poundToEuro(float a) {
+    return 1.1*a;
+  }
+
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter your conversion amount in pounds");
+    String temp = scan.nextLine();
+    float pounds = Float.parseFloat(temp);
+    System.out.println("Enter currency to convert to: PLN, Dollar, Euro");
+    temp = scan.nextLine();
+    temp = temp.replace(" ","");
+    char ch1 = temp.charAt(0);
+    if (ch1 == 'p' || ch1 == 'P'){
+         System.out.println(poundToPln(pounds));
+    }else if(ch1 == 'd'||  ch1 == 'D'){
+      System.out.println(poundToDollar(pounds));
+    }else if(ch1 == 'e' || ch1 == 'E'){
+      System.out.println(poundToEuro(pounds));
+   }else{
+      System.out.println("Invalid Input");
+    }
+  }
+}
