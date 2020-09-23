@@ -21,9 +21,7 @@ class Main {
 
     for (int row = 0; row<a.length; row++){
       for (int col = 0; col<a[row].length; col++){
-        if (row == 0 || row == a.length-1){
-          b[row][col] = a[row][col];
-        }else if (col == 0 || col == a[row].length-1){
+        if (row == 0 || row == a.length-1 || col == 0 || col == a[row].length-1){
           b[row][col] = a[row][col];
         }else{
           if (a[row][col] == " "){
